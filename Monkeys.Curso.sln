@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monkeys.Curso", "Monkeys.Curso\Monkeys.Curso.csproj", "{4052DEE0-28CF-4578-B722-48696295C9A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MAUI", "MAUI", "{66ABA121-A106-45AA-BCDB-690718490F28}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Monkeys.Curso.Core", "Core\Monkeys.Curso.Core\Monkeys.Curso.Core.shproj", "{AE07F6BC-DC30-4C16-AF4E-392EA981F2B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4052DEE0-28CF-4578-B722-48696295C9A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4052DEE0-28CF-4578-B722-48696295C9A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4052DEE0-28CF-4578-B722-48696295C9A6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4052DEE0-28CF-4578-B722-48696295C9A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4052DEE0-28CF-4578-B722-48696295C9A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4052DEE0-28CF-4578-B722-48696295C9A6} = {66ABA121-A106-45AA-BCDB-690718490F28}
+		{AE07F6BC-DC30-4C16-AF4E-392EA981F2B6} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13EBCB67-1B56-497E-90E8-604D8C7FB79D}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Core\Monkeys.Curso.Core\Monkeys.Curso.Core.projitems*{4052dee0-28cf-4578-b722-48696295c9a6}*SharedItemsImports = 5
+		Core\Monkeys.Curso.Core\Monkeys.Curso.Core.projitems*{ae07f6bc-dc30-4c16-af4e-392ea981f2b6}*SharedItemsImports = 13
+	EndGlobalSection
+EndGlobal

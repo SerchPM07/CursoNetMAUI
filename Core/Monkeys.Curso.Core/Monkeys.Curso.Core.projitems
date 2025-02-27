@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>ae07f6bc-dc30-4c16-af4e-392ea981f2b6</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Monkeys.Curso.Core</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)DTOs\Monkey.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GlobalUsings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AppInfoService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AppService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DependencyContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Interfaces\IAppInfoService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Interfaces\IAppService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Interfaces\INavigationShellService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Interfaces\IWebApiClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\NavigationShellService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\WebApiClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\DependencyContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\DetailsMokeyViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MonkeysViewModel.cs" />
+  </ItemGroup>
+</Project>
