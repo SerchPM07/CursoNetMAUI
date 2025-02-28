@@ -1,12 +1,9 @@
-﻿
-using System.Text.Json;
-
+﻿using System.Text.Json;
 
 namespace Monkeys.Curso.Core.Services;
 
 public class WebApiClient : IWebApiClient
 {
-
 
     // se a creado  una clase la cual es 'WebApiclient ' que implementa el cliente HTTP para realizar llamadas GET, y tienes la estructura básica para implementar POST y PUT.
     private readonly HttpClient HttpClient;
@@ -24,7 +21,8 @@ public class WebApiClient : IWebApiClient
 
         HttpClient = new HttpClient();
     }
-    public async Task<(HttpStatusCode statusCode, TResponse result)> CallGetAsync<TResponse>(string url)
+
+    public async Task<(HttpStatusCode statusCode, TResponse result)> CallGetAsync<TResponse>(string url = "")
     {
         try
         {
@@ -37,8 +35,6 @@ public class WebApiClient : IWebApiClient
             return (HttpStatusCode.BadRequest, default);
         }
     }
-
-    
 
     public Task<(HttpStatusCode statusCode, TResponse result)> CallGetAsync<TResponse>(string url, params (string, object)[] parameters)
     {
@@ -55,7 +51,6 @@ public class WebApiClient : IWebApiClient
         throw new NotImplementedException();
     }
 
-
     private (HttpStatusCode statusCode, TResponse response) ProcessResponse<TResponse>(HttpResponseMessage httpResponse)
     {
         try
@@ -68,12 +63,10 @@ public class WebApiClient : IWebApiClient
             }
             return (httpResponse.StatusCode, default);
 
-
         }
         catch
         {
             return (HttpStatusCode.InternalServerError, default);
         }
     }
-
 }

@@ -1,10 +1,11 @@
 ﻿
 using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
+//su funcion inicial es la navegacion de la aplicacion, utiliza el metodo Snackbar para generar notificaciones 
+
 
 namespace Monkeys.Curso.Core.Services;
 
-//su funcion inicial es la navegacion de la aplicacion, utiliza el metodo Snackbar para generar notificaciones 
 class NavigationShellService : INavigationShellService
 {
     public async Task GoBack() =>
@@ -41,6 +42,7 @@ class NavigationShellService : INavigationShellService
         {
             Console.WriteLine("Error al mostrar el modal: {0}", e.Message);
         }
-       
+
     }
 }
+
