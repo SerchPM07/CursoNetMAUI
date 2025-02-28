@@ -2,7 +2,7 @@
 
 public interface IAppInfoService
 {
-    void GetVersion();
+    string GetVersion();
 
-    void GetPlatform();
+    string GetPlatform();
 }

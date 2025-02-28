@@ -1,5 +1,7 @@
-﻿namespace Monkeys.Curso.Core.ViewModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-public class DetailsMokeyViewModel
+namespace Monkeys.Curso.Core.ViewModel;
+
+public class DetailsMokeyViewModel : ObservableObject
 {
 }
