@@ -1,5 +1,7 @@
-﻿using Monkeys.Curso.Core.Services;
+﻿using CommunityToolkit.Maui;
+using Monkeys.Curso.Core.Services;
 using Monkeys.Curso.Core.ViewModel;
+using Monkeys.Curso.Pages;
 
 namespace Monkeys.Curso.Helpers;
 
@@ -9,6 +11,7 @@ public static class IoC
     {
         services.AddServices();
         services.AddViewModels();
+        services.AddTransientWithShellRoute<DetailsMokeyPage, DetailsMokeyViewModel>("DetailsMokeyPage");
         return services;
     }
 }

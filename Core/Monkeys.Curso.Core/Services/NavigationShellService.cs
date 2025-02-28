@@ -1,25 +1,45 @@
 ﻿
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+
 namespace Monkeys.Curso.Core.Services;
 
 class NavigationShellService : INavigationShellService
 {
-    public Task GoBack()
+    public async Task GoBack() =>
+        await Shell.Current.GoToAsync("..");
+
+    public async Task GoToNavigate(string url) =>
+        await Shell.Current.GoToAsync(url, true);
+
+    public async Task GoToNavigate(string url, Dictionary<string, object> parameters)
     {
-        throw new NotImplementedException();
+        var navigationParameters = new ShellNavigationQueryParameters();
+        foreach (var parm in parameters)
+            navigationParameters.Add(parm.Key, parm.Value);
+        await Shell.Current.GoToAsync(url, true, navigationParameters);
     }
 
-    public Task GoToNavigate(string url)
+    public async Task ShowSnackbar(string message)
     {
-        throw new NotImplementedException();
-    }
+        try
+        {
+            CancellationTokenSource cancellationTokenSource = new();
+            var snackbarOptions = new SnackbarOptions
+            {
+                BackgroundColor = Colors.Red,
+                TextColor = Colors.White,
+                CornerRadius = new CornerRadius(10),
+                Font = Microsoft.Maui.Font.SystemFontOfSize(16)
+            };
 
-    public Task GoToNavigate(string url, Dictionary<string, object> parameters)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task ShowSnackbar(string message)
-    {
-        throw new NotImplementedException();
+            var snackbar = Snackbar.Make(message, actionButtonText: string.Empty, duration: TimeSpan.FromSeconds(5), visualOptions: snackbarOptions);
+            await snackbar.Show(cancellationTokenSource.Token);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error al mostrar el modal: {0}", e.Message);
+        }
+       
     }
 }
