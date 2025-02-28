@@ -27,7 +27,7 @@ class NavigationShellService : INavigationShellService
         {
             CancellationTokenSource cancellationTokenSource = new();
             var snackbarOptions = new SnackbarOptions
-            {
+    {
                 BackgroundColor = Colors.Red,
                 TextColor = Colors.White,
                 CornerRadius = new CornerRadius(10),
@@ -36,11 +36,14 @@ class NavigationShellService : INavigationShellService
 
             var snackbar = Snackbar.Make(message, actionButtonText: string.Empty, duration: TimeSpan.FromSeconds(5), visualOptions: snackbarOptions);
             await snackbar.Show(cancellationTokenSource.Token);
-        }
+    }
         catch (Exception e)
-        {
+    {
             Console.WriteLine("Error al mostrar el modal: {0}", e.Message);
-        }
-       
+    }
+
+    public Task ShowSnackbar(string message)
+    {
+        throw new NotImplementedException();
     }
 }
