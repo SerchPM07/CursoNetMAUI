@@ -2,13 +2,10 @@
 
 class AppInfoService : IAppInfoService
 {
-    public void GetPlatform()
-    {
-        throw new NotImplementedException();
-    }
+    public string GetPlatform() =>
+        DeviceInfo.Current.Platform.ToString();
 
-    public void GetVersion()
-    {
-        throw new NotImplementedException();
-    }
+
+    public string GetVersion() =>
+        AppInfo.Version.ToString();
 }

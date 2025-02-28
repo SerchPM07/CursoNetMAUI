@@ -2,6 +2,10 @@
 
 class AppService : IAppService
 {
-    public string NombreCompleto { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public string UrlServidor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    public string NombreCompleto 
+    { 
+        get => Preferences.Get("NombreCompleto", "");
+        set => Preferences.Set("NombreCompleto", value);
+    }
+    public string UrlServidor { get; } = "https://monkeys.com"; //Esta ruta la debo de cambiar por la ruta de mi servidor
 }
