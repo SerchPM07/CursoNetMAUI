@@ -6,6 +6,7 @@
              xmlns:model="clr-namespace:Monkeys.Curso.Core.DTOs"
              x:DataType="vm:MonkeysViewModel"
              Title="MonkeysPage">
+
     <Grid ColumnDefinitions=".05*,*,.05*" RowDefinitions="*, Auto">
         <RefreshView Grid.Column="1" IsRefreshing="{Binding IsRefreshing}" Command="{Binding GetMonkeysCommand}">
             <CollectionView ItemsSource="{Binding Monkeys}" SelectionMode="None">
@@ -30,4 +31,7 @@
             </CollectionView>
         </RefreshView>
     </Grid>
+
+  
+
 </ContentPage>
