@@ -20,7 +20,7 @@ public class WebApiClient : IWebApiClient
         HttpClient = new HttpClient();
     }
 
-    public async Task<(HttpStatusCode statusCode, TResponse result)> CallGetAsync<TResponse>(string url)
+    public async Task<(HttpStatusCode statusCode, TResponse result)> CallGetAsync<TResponse>(string url = "")
     {
         try
         {

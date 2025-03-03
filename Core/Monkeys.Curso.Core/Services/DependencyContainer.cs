@@ -8,6 +8,7 @@ public static class DependencyContainer
         services.AddSingleton<IAppService, AppService>();
         services.AddSingleton<INavigationShellService, NavigationShellService>();
         services.AddSingleton<IWebApiClient, WebApiClient>();
+        services.AddSingleton<IMonkeysService, MonkeysService>();
         return services;
     }
 }
