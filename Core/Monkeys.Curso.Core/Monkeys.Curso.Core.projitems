@@ -19,8 +19,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\DependencyContainer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Interfaces\IAppInfoService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Interfaces\IAppService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Interfaces\IMonkeysService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Interfaces\INavigationShellService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Interfaces\IWebApiClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\MonkeysService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\NavigationShellService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\WebApiClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\DependencyContainer.cs" />
