@@ -30,10 +30,10 @@ public class WebApiClient : IWebApiClient
             return ProcessResponse<TResponse>(response);
         }
         catch (Exception e)
-        {
+    {
             Console.WriteLine("Error en el servidor: {0}", e.Message);
             return (HttpStatusCode.BadRequest, default);
-        }
+    }
     }
 
     public Task<(HttpStatusCode statusCode, TResponse result)> CallGetAsync<TResponse>(string url, params (string, object)[] parameters)
