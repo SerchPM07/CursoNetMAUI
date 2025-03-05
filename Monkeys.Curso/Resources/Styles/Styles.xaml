@@ -161,7 +161,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="Label">
+    <!--<Style TargetType="Label">
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
         <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="FontFamily" Value="OpenSansRegular" />
@@ -178,7 +178,7 @@
                 </VisualStateGroup>
             </VisualStateGroupList>
         </Setter>
-    </Style>
+    </Style>-->
 
     <Style TargetType="Span">
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
@@ -446,6 +446,48 @@
         <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource Magenta}, Dark={StaticResource White}}" />
         <Setter Property="UnselectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
+    </Style>
+
+    
+    <Style TargetType="Label">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <!-- Estilo para las imágenes -->
+    <Style TargetType="Image">
+        <Setter Property="WidthRequest" Value="250" />
+        <Setter Property="HeightRequest" Value="250" />
+        <Setter Property="Aspect" Value="AspectFill" />
+    </Style>
+
+    <!-- Estilo para el VerticalStackLayout -->
+    <Style TargetType="VerticalStackLayout">
+        <Setter Property="Spacing" Value="20" />
+        <Setter Property="Padding" Value="20,10,20,10" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+    </Style>
+
+    <!-- Estilo para el nombre del mono -->
+    <Style x:Key="MonkeyNameStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="#FF5733" />
+        <Setter Property="VerticalOptions" Value="Start" />
+    </Style>
+
+    <!-- Estilo para las etiquetas con información adicional -->
+    <Style x:Key="MonkeyInfoStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+    </Style>
+
+    <!-- Estilo para los StackLayouts con información horizontal -->
+    <Style x:Key="HorizontalStackLayoutStyle" TargetType="StackLayout">
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="Spacing" Value="10" />
+        <Setter Property="VerticalOptions" Value="Center" />
     </Style>
 
 </ResourceDictionary>

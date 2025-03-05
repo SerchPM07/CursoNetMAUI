@@ -2,11 +2,45 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Monkeys.Curso.Pages.DetailsMokeyPage"
+             xmlns:vm="clr-namespace:Monkeys.Curso.Core.ViewModel"
+             x:DataType="vm:DetailsMokeyViewModel"
+             Shell.NavBarIsVisible="False"
              Title="DetailsMokeyPage">
+
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        
+        <Image Source="{Binding SelectedMonkey.Image}" />
+
+        <Label Text="{Binding SelectedMonkey.Name}"
+               Style="{StaticResource MonkeyNameStyle}" />
+
+        <Label Text="{Binding SelectedMonkey.Location}"  />
+
+        <Label Text="{Binding SelectedMonkey.Details}" 
+               Style="{StaticResource MonkeyInfoStyle}" />
+
+        <StackLayout Style="{StaticResource HorizontalStackLayoutStyle}">
+            <Label Text="Población:" FontAttributes="Bold" />
+            <Label Text="{Binding SelectedMonkey.Population}" />
+        </StackLayout>
+
+        <StackLayout Style="{StaticResource HorizontalStackLayoutStyle}">
+            <Label Text="Latitud:" FontAttributes="Bold" />
+            <Label Text="{Binding SelectedMonkey.Latitude}" />
+        </StackLayout>
+        
+        <StackLayout Style="{StaticResource HorizontalStackLayoutStyle}">
+            <Label Text="Longitud:" FontAttributes="Bold" />
+            <Label Text="{Binding SelectedMonkey.Longitude}" />
+        </StackLayout>
+
+        <Button Text="Volver"
+                Command="{Binding GoBackCommand}" />
+
+        <Button Text="Abrir mapa"
+                Command="{Binding OpenMapMonkeyCommand}" />
+
+        <Button Text="Distancia"
+                Command="{Binding GetDistanciaCommand}" />
     </VerticalStackLayout>
 </ContentPage>

@@ -12,6 +12,9 @@ public static class IoC
         services.AddServices();
         services.AddViewModels();
         services.AddTransientWithShellRoute<DetailsMokeyPage, DetailsMokeyViewModel>("DetailsMonkeyPage");
+        services.AddSingleton<IMap>(Map.Default);
+        services.AddSingleton<IGeolocation>(Geolocation.Default);
+        services.AddSingleton<IConnectivity>(Connectivity.Current);
         return services;
     }
 }
