@@ -6,10 +6,15 @@ public partial class MonkeysViewModel : ObservableObject
 {
     private readonly IMonkeysService MonkeysService;
     private readonly INavigationShellService NavigationShellService;
-    public MonkeysViewModel(IMonkeysService monkeysService, INavigationShellService navigationShellService)
+    private readonly IConnectivity Connectivity;
+    public MonkeysViewModel(IMonkeysService monkeysService, INavigationShellService navigationShellService, IConnectivity connectivity, IAppInfoService appInfoService)
     {
         MonkeysService = monkeysService;
         NavigationShellService = navigationShellService;
+        Connectivity = connectivity;
+
+        var version = appInfoService.GetVersion();
+        var plataforma = appInfoService.GetPlatform();
     }
 
     [ObservableProperty]
@@ -21,12 +26,19 @@ public partial class MonkeysViewModel : ObservableObject
     [RelayCommand]
     public async Task GetMonkeys()
     {
-        var result = await MonkeysService.GetMonkeys();
+        if( Connectivity.NetworkAccess == NetworkAccess.Internet)
+        {
+            var result = await MonkeysService.GetMonkeys();
 
-        if (result != null)
-            Monkeys = result;
+            if (result != null)
+                Monkeys = result;
+            else
+                Monkeys = new();
+        }
         else
-            Monkeys = new();
+        {
+            await NavigationShellService.ShowSnackbar("Sin acceso a internet");
+        }
         IsRefreshing = false;
     }
 
@@ -38,7 +50,7 @@ public partial class MonkeysViewModel : ObservableObject
 
         await NavigationShellService.GoToNavigate("DetailsMokeyPage", new Dictionary<string, object>
         {
-            { "Monkey", monkey}
+            { "MonkeyKey", monkey}
         });
     }
 }
