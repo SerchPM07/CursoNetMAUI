@@ -2,6 +2,14 @@
 
 namespace Monkeys.Curso.Core.ViewModel;
 
-public class DetailsMokeyViewModel : ObservableObject
+[QueryProperty(nameof(Monkey), "Monkey")]
+public partial  class DetailsMokeyViewModel : ObservableObject
 {
+    [ObservableProperty]
+    public Monkey monkey;
+
+    public DetailsMokeyViewModel()
+    {
+
+    }
 }

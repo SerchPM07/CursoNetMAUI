@@ -43,7 +43,6 @@ class NavigationShellService : INavigationShellService
             Console.WriteLine("Error al mostrar el modal: {0}", e.Message);
         }
        
-
     }
 }
 
